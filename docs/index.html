@@ -12,9 +12,8 @@
             height: 100%;
             overflow: hidden;
             background: #000000;
-            font-size: 16px; /* Base font size */
         }
-
+        
         #starCanvas {
             position: absolute;
             top: 0;
@@ -22,11 +21,11 @@
             width: 100%;
             height: 100%;
         }
-
+        
         .psi-text {
             position: absolute;
             top: 35%;
-            left: 46.5%;
+            left: 44.5%;
             transform: translate(-50%, -50%);
             font: bold 5rem 'Times New Roman', sans-serif;
             color: #ffffff;
@@ -34,21 +33,6 @@
             animation: hoverUpAndDown 5s infinite alternate;
             text-align: center;
             text-shadow: 0 0 5px #13e3c0, 0 0 10px #016cee, 0 0 15px #0dbdf8, 0 0 20px #001aff;
-            font-size: 3rem; /* Adjust base size */
-        }
-
-        @media (max-width: 768px) {
-            .psi-text {
-                font-size: 2rem; /* Smaller size on smaller screens */
-                top: 30%; /* Adjust position for smaller screens */
-            }
-        }
-
-        @media (max-width: 480px) {
-            .psi-text {
-                font-size: 1.5rem; /* Even smaller size on very small screens */
-                top: 25%; /* Adjust position for very small screens */
-            }
         }
 
         .psi-text::before {
@@ -57,23 +41,10 @@
             font-size: 13rem;
             color: rgb(255, 255, 255);
             font-weight: bold;
-            margin-bottom: -116px;
+            margin-bottom: -176px;
             opacity: 0.2;
             animation: stretchBackground 5s infinite alternate;
             text-shadow: none;
-            font-size: 8rem; /* Adjust base size */
-        }
-
-        @media (max-width: 768px) {
-            .psi-text::before {
-                font-size: 6rem; /* Smaller size on smaller screens */
-            }
-        }
-
-        @media (max-width: 480px) {
-            .psi-text::before {
-                font-size: 4rem; /* Even smaller size on very small screens */
-            }
         }
 
         @keyframes hoverUpAndDown {
@@ -84,7 +55,7 @@
                 transform: translateY(-10px);
             }
         }
-
+        
         @keyframes stretchBackground {
             0%, 100% {
                 transform: scale(1);
@@ -95,7 +66,7 @@
         }
 
         #newsletter-signup {
-            background-color: rgba(255, 255, 255, 0.5);
+            background-color: rgba(255, 255, 255, 0.5); /* Adjusted opacity */
             padding: 5px;
             text-align: center;
             position: absolute;
@@ -145,14 +116,15 @@
         }
     </style>
 </head>
+
 <body>
     <div class="hyperspace">
         <canvas id="starCanvas"></canvas>
         <span class="psi-text">PSI</span>
     </div>
-
+   
     <section id="newsletter-signup">
-        <h2>Creating a world where creativity and digital innovation converge in a revolutionary digital playground, nurturing the next generation of PSIBORGS</h2>
+        <h2> Creating a world where creativity and digital innovation converge in a revolutionary digital playground, nurturing the next generation of PSIBORGS</h2>
         <form id="signup-form">
             <div class="form-group">
                 <label for="firstName">First Name:</label>
@@ -184,7 +156,6 @@
     <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-firestore.js"></script>
     <script>
         const firebaseConfig = {
-            // ... [Your Firebase Config] ...
             apiKey: "AIzaSyDE7v0KYUoKiV_jBJF0c4QEvWRzDO2VNyY",
             authDomain: "psiborg-x-launch.firebaseapp.com",
             databaseURL: "https://psiborg-x-launch-default-rtdb.firebaseio.com",
@@ -223,6 +194,7 @@
                 }).then(() => {
                     console.log('Data submitted!');
                     signupForm.reset();
+                    // Start playing music after form submission
                     backgroundMusic.play();
                 }).catch(error => {
                     console.error('Error writing document: ', error);
