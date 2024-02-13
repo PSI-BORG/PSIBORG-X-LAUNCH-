@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PSIBORG LAUNCH</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background: linear-gradient(to right, #0072ff, #00c6ff, #00ffcc, #00c6ff, #0072ff);
+            font-size: 16px;
+        }
+
+        #starCanvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .center-logo, .left-logo, .right-logo {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .center-logo img, .left-logo img, .right-logo img {
+            width: 100%;
+            height: auto;
+        }
+
+        .center-logo {
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .left-logo {
+            top: 50%;
+            left: 10%;
+            transform: translateY(-50%);
+        }
+
+        .right-logo {
+            top: 50%;
+            right: 10%;
+            transform: translateY(-50%);
+        }
+
+        @media (max-width: 768px) {
+            .center-logo, .left-logo, .right-logo {
+                width: 60px; /* Smaller logos for narrower viewports */
+                height: 60px;
+            }
+            /* Additional responsive adjustments can be added here */
+        }
+    </style>
+</head>
+<body>
+    <div class="hyperspace">
+        <canvas id="starCanvas"></canvas>
+        <a href="https://www.instagram.com/psi_borg_wrld/?utm_source=qr" class="left-logo" target="_blank">
+            <img src="insta.icon.png" alt="Instagram Logo">
+        </a>
+        <a href="https://opensea.io/PSIB0RG" class="center-logo" target="_blank">
+            <img src="opensea.svg" alt="OpenSea Logo">
+        </a>
+        <a href="https://discord.gg/2z7BQX5D" class="right-logo" target="_blank">
+            <img src="Discord.logo.png" alt="Discord Logo">
+        </a>
+    </div>
+
+    <audio id="backgroundMusic" autoplay loop>
+        <source src="analog control v2.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <!-- Firebase SDK and Star Animation Script -->
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+    <script src="scripts.js"></script>
+</body>
+</html>
