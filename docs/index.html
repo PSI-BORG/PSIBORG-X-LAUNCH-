@@ -11,7 +11,7 @@
             width: 100%;
             height: 100%;
             overflow: hidden;
-            background: linear-gradient(to right, #000000, #000000, rgba(5, 21, 237, 0.34), #000000, #000000);
+            background: linear-gradient(to right, #000000, #000000, rgba(5, 167, 237, 0.902), #000000, #000000);
             font-size: 16px; /* Base font size */
         }
 
@@ -26,7 +26,7 @@
         .psi-text {
             position: absolute;
             
-            left: 42%;
+            left: 42.5%;
             transform: translate(-50%, -50%);
             font: bold 5rem 'Times New Roman', sans-serif;
             color: #ffffff;
@@ -64,17 +64,6 @@
             font-size: 8rem; /* Adjust base size */
         }
 
-        @media (max-width: 768px) {
-            .psi-text::before {
-                font-size: 6rem; /* Smaller size on smaller screens */
-            }
-        }
-
-        @media (max-width: 480px) {
-            .psi-text::before {
-                font-size: 4rem; /* Even smaller size on very small screens */
-            }
-        }
 
         @keyframes hoverUpAndDown {
             0%, 100% {
