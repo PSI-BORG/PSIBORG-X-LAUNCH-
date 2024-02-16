@@ -13,7 +13,6 @@
             overflow: hidden;
             background: linear-gradient(to right, #0072ff, #00c6ff, #00ffcc, #00c6ff, #0072ff);
             font-size: 16px;
-            
         }
 
         #starCanvas {
@@ -56,7 +55,13 @@
             transform: translateY(-50%);
         }
 
-        
+        @media (max-width: 768px) {
+            .center-logo, .left-logo, .right-logo {
+                width: 60px; /* Smaller logos for narrower viewports */
+                height: 60px;
+            }
+            /* Additional responsive adjustments can be added here */
+        }
     </style>
 </head>
 <body>
